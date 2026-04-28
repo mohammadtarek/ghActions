@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v6.0.2
         
       - name: List Repository Files
-        run: ls-la
+        run: ls -la
