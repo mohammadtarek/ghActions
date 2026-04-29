@@ -3,6 +3,7 @@ on:
     inputs:
       environment:
         description: "Choose the environment to run your tests"
+        type: choice
         required: true
         default: "staging"
         options:
