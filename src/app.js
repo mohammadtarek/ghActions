@@ -3,6 +3,6 @@ function greatName(name){
 }
 module.exports = greatName;
 
-if(require.main === module){
-    console.log(greatName("World"));
-}
+// if(require.main === module){
+//     console.log(greatName("World"));
+// }
