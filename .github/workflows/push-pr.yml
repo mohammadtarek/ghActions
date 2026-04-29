@@ -4,20 +4,19 @@ on:
       - main
       - "release/**"
     paths:
-      - "/src/**"
-    pull_request:
-      branches:
-        - main
-        - "release/**"
-    jobs:
-      tests:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v4
+      - "src/**"        # ✅ removed leading slash
+  pull_request:         # ✅ top-level trigger, not nested under push
+    branches:
+      - main
+      - "release/**"
 
-          - name: Run tests
-            run: |
-              npm tests
-        
+jobs:                   # ✅ top-level key, not nested under on.push
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
+      - name: Run tests
+        run: |
+          npm test      # ✅ correct npm command
