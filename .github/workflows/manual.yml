@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose the environment to run your tests"
+        required: true
+        default: "staging"
+        options:
+          - staging
+          - production
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the application
+        run: echo "Deploying the application to ${{ inputs.environment }}"
