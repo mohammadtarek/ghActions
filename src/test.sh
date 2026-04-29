@@ -3,7 +3,7 @@
 # src/test.sh
 
 Expected="Hello World"
-output=$(node -e "console.log(require('./src/app')('Test'))")
+output=$(node -e "console.log(require('./src/app')('World'))")
 if [ "$output" == "$Expected" ]; then
     echo "Test passed"
     exit 0
